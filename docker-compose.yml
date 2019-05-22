@@ -1,0 +1,13 @@
+version: '3'
+services:
+  sample-logstash:
+    #build: .
+    image: edubossa/sample-logstash:v1.3
+    ports:
+      - "8080:8080"
+    #expose:
+      #- 8080
+    volumes:
+      - /Users/wallace/Apps/sample-logstash/log:/opt/log
+    environment:
+      JAVA_OPTS: '-Xmx256m -Duser.timezone=America/Sao_Paulo'
